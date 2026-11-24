@@ -4,8 +4,7 @@ CHASM (Change-point Hypothesis Assessment for Significance in Multivariate data)
 detects statistically significant changes between two multivariate data
 segments.
 
-This repository combines the full scoring implementation from `develop` with
-the result contract used by `brainlab_app`.
+This repository presents methodology of CHASM described in 'Unsupervised and explainable authorization of change point in multivariate industrial data for trustworthy system and process monitoring' by J. Witulska, T. Barszcz, A. Wyłomańska, I. Jabłoński.
 
 ## Installation
 

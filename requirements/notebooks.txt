@@ -1,0 +1,3 @@
+-r base.txt
+ipykernel>=6.25
+jupyter>=1.0

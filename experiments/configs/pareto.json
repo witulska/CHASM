@@ -1,0 +1,32 @@
+{
+  "distribution": "pareto",
+  "seed": 2024,
+  "trials": 10,
+  "sample_size": 100,
+  "dimension": 2,
+  "n_resamples": 50,
+  "confidence_level": 0.95,
+  "scenarios": [
+    {
+      "name": "alpha_change",
+      "alpha1": 0.4,
+      "alpha2": 0.8,
+      "beta1": 1.0,
+      "beta2": 1.0
+    },
+    {
+      "name": "beta_change",
+      "alpha1": 0.4,
+      "alpha2": 0.4,
+      "beta1": 1.0,
+      "beta2": 10.0
+    },
+    {
+      "name": "no_change",
+      "alpha1": 0.4,
+      "alpha2": 0.4,
+      "beta1": 1.0,
+      "beta2": 1.0
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "distribution": "gaussian",
+  "seed": 2024,
+  "trials": 10,
+  "sample_size": 100,
+  "dimension": 2,
+  "n_resamples": 50,
+  "confidence_level": 0.95,
+  "scenarios": [
+    {
+      "name": "mean_change",
+      "loc1": [0.0, 0.0],
+      "loc2": [1.0, 1.0],
+      "cov1": "identity",
+      "cov2": "identity"
+    },
+    {
+      "name": "correlation_change",
+      "loc1": [0.0, 0.0],
+      "loc2": [0.0, 0.0],
+      "cov1": [[1.0, 0.9], [0.9, 1.0]],
+      "cov2": [[1.0, 0.2], [0.2, 1.0]]
+    },
+    {
+      "name": "no_change",
+      "loc1": [0.0, 0.0],
+      "loc2": [0.0, 0.0],
+      "cov1": "identity",
+      "cov2": "identity"
+    }
+  ]
+}

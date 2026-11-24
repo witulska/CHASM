@@ -102,7 +102,22 @@ For a given metric, `decision=1` means that CHASM detected a significant
 change. The complete result, including the confidence bound and observed
 statistic, is available in `metric_result`.
 
-## Using only the classical mean
+## Defining custom statistics
+
+Use the helper that matches the direction and input structure of the
+statistic:
+
+- `bootstraping_one_dim_stats` is for differences between statistics of
+  one-dimensional signals. The callable receives `(first, second, axis=...)`.
+- `bootstraping_divergences` is for differences between distributions. The
+  callable receives the two sample arrays and should return a scalar-like
+  value or a one-element array. Its observed value is compared with an upper
+  confidence bound.
+- `bootstraping_corr` is for correlation-like statistics. By default it uses
+  Spearman correlation, but a custom callable with the same signature can be
+  passed through the `statistic` argument.
+
+### Example 1: Using only the classical mean
 
 The bootstrap helpers are public, so an application can use only one
 statistic. The following example defines a classical mean-change score and
@@ -142,22 +157,8 @@ should follow the same convention as the built-in one-dimensional metrics:
 the score is compared with a lower confidence bound and a smaller observed
 score indicates a change.
 
-## Defining custom statistics
-
-Use the helper that matches the direction and input structure of the
-statistic:
-
-- `bootstraping_one_dim_stats` is for differences between statistics of
-  one-dimensional signals. The callable receives `(first, second, axis=...)`.
-- `bootstraping_divergences` is for differences between distributions. The
-  callable receives the two sample arrays and should return a scalar-like
-  value or a one-element array. Its observed value is compared with an upper
-  confidence bound.
-- `bootstraping_corr` is for correlation-like statistics. By default it uses
-  Spearman correlation, but a custom callable with the same signature can be
-  passed through the `statistic` argument.
-
-For example, a Wasserstein-distance statistic can be bootstrapped as follows:
+### Example 2: Using a Wasserstein-distance statistic
+A Wasserstein-distance statistic can be bootstrapped as follows:
 
 ```python
 from scipy.stats import wasserstein_distance
